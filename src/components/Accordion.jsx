@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
-const Accordion = ({ itemArray }) => {
+const Accordion = ({ items }) => {
 	const [activeIndex, setActiveIndex] = useState('');
 
 	const onTitleClick = (index) => {
@@ -9,11 +9,11 @@ const Accordion = ({ itemArray }) => {
 
 	// on double click it closes the toggled item
 
-	// const onDoubleClickToggle = () => {
-	// 	setActiveIndex(!activeIndex);
-	// };
+	const onDoubleClickToggle = () => {
+		setActiveIndex(!activeIndex);
+	};
 
-	const renderItems = itemArray.map((item, index) => {
+	const renderItems = items.map((item, index) => {
 		const active = index === activeIndex ? 'active' : '';
 
 		return (
